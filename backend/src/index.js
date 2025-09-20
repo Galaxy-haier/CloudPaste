@@ -42,9 +42,8 @@ app.use("*", async (c, next) => {
   } else {
     // 其他请求使用标准CORS处理
     const corsMiddleware = cors({
-      origin: (origin) => {
-        return origin || "*";
-      },
+      // 关键改动：将origin设置为你的前端域名
+      origin: "https://148143.xyz",
       allowHeaders: [
         "Content-Type",
         "Authorization",
